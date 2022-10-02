@@ -48,5 +48,5 @@ function responsive(){
   }else{
     botones.classList.add("botones")
   }
-  console.log("holaaaaa")
+  // console.log("holaaaaa")
 }

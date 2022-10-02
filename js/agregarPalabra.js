@@ -1,6 +1,7 @@
 let botonAgregar = document.querySelector(".botones__agregar")
 
 const habilitar2Menu = () => {
+  responsive()
   let botones = document.querySelector(".botones")
   botones.style.paddingTop = "10px"
 
