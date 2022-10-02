@@ -106,7 +106,6 @@ footer p{
 }
 
 .botonesTablet{
-  background-color: lightblue;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
