@@ -1,38 +1,5 @@
 let palabras = ["vampiro","gato","bogota","navidad","portatil","alegria","vaso","tigre","avion"]
 
-function getRandomArbitrary(min=1, max=palabras.length) {
-  let numero = Math.random() * (max - min) + min;
-  return Math.floor(numero);
-}
-
-function palabraRandom(){
-  return palabras[getRandomArbitrary()]
-}
-
-function agregarPalabra(palabras, palabra){  
-  return palabras.push(palabra);
-}
-
-function escogerPalabra(arregloPalabras){
-  let max = palabras.length;
-  const min = 1
-  let numero = Math.random() * (max - min) + min;
-  return arregloPalabras[Math.floor(numero)];
-}
-
-function limpiarCanvas(){
-  let canvas = document.getElementById("canvas");
-  let ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-function reiniciarVariablesGlobales(){
-  letrasExistentes = []
-  palabraEscrita = 0
-  acumulador= 60
-  letrasEquivocadas = []
-}
-
 let btnComenzar = document.querySelector(".botones__comenzar")
 if(btnComenzar.textContent == "Iniciar juego"){
   btnComenzar.addEventListener("click",  (evento) => habilitarCanvas2(evento) )
@@ -59,25 +26,20 @@ function habilitarCanvas2(evento){
     agregarPalabra(palabras, palabraIngresada.value);
     palabraIngresada.value = ""
   }
-  console.log("el conjutno es "+ palabras)
-  palabraIngresada.classList.remove("visible")
-  palabraIngresada.classList.add("invisible")
+  // console.log("el conjutno es "+ palabras)
+  hacerInvisible(palabraIngresada)
   let palabra = ""
   palabra = palabraRandom()
-  console.log(palabra.toUpperCase() + " dentro de habilitarCanvas()")
+  // console.log(palabra.toUpperCase() + " dentro de habilitarCanvas()")
 
   let canvas = document.querySelector("canvas")
   let letraIngresada = document.querySelector(".inputPalabra")
+
+  hacerVisible(canvas)
+  hacerVisible(letraIngresada)
   letraIngresada.value = ""
 
-  canvas.classList.remove("invisible")
-  canvas.classList.add("visible")
-
-  letraIngresada.classList.remove("invisible")
-  letraIngresada.classList.add("visible")
-
   dibujarBase()
-
 
   function presionada(evento){
     let letra = evento.key
@@ -98,9 +60,8 @@ function habilitarCanvas2(evento){
 
   //prueba
   if (btnComenzar.textContent === "Nuevo Juego"){
-    // btnDesistir.addEventListener("click", (evento) => desistirAnonimo(evento)); NO me estaba BOrrando de esta forma 
+    // btnDesistir.addEventListener("click", (evento) => desistirAnonimo(evento)); NO me estaba Borrando de esta forma 
     btnDesistir.addEventListener("click", desistirAnonimo); 
-    console.log("dentro del if donde pregunta si bton comenzar == Nuevo juego") 
   }
 }
 
@@ -110,12 +71,12 @@ const desistirAnonimo = () =>{
   let letraIngresada = document.querySelector(".inputPalabra")
   let btnComenzar = document.querySelector(".botones__comenzar")
   let btnAgregar = document.querySelector(".botones__agregar")
-  
-  canvas.classList.add("invisible")
-  letraIngresada.classList.add("invisible")
   let palabraIngresada = document.querySelector(".inputPalabraNueva")
-  palabraIngresada.classList.remove("visible")
-  palabraIngresada.classList.add("invisible")
+
+  hacerInvisible(canvas)
+  hacerInvisible(letraIngresada)
+  hacerInvisible(palabraIngresada)
+
   btnComenzar.textContent = "Iniciar juego"
   btnAgregar.textContent = "Agregar nueva palabra"
   // console.log("Estoy en la desistirAnonimo")
@@ -132,8 +93,8 @@ function desistir (){
   let btnComenzar = document.querySelector(".botones__comenzar")
   let btnAgregar = document.querySelector(".botones__agregar")
   
-  canvas.classList.add("invisible")
-  letraIngresada.classList.add("invisible")
+  hacerInvisible(canvas)
+  hacerInvisible(letraIngresada)
 
   btnComenzar.textContent = "Iniciar juego"
   btnAgregar.textContent = "Agregar nueva palabra"

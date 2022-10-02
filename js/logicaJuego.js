@@ -36,28 +36,20 @@ function ahorca(palabra, letra=""){
 function verificar(intentosBuenos, intentosMalos, palabra){
   let letraIngresada = document.querySelector(".inputPalabra")
   if(intentosBuenos === palabra.length){
-    console.log("Ganoo")
-    letraIngresada.classList.add("invisible")
-    letrasExistentes = []
-    palabraEscrita = 0
-    acumulador= 60
-    letrasEquivocadas = []
+    hacerInvisible(letraIngresada)
+    reiniciarVariablesGlobales()
     pincel.font = "25px Arial";
     pincel.fillStyle = "green";
     pincel.fillText("Ganaste, Felicidades",  50, 40);
   }
   dibujar(50,100,intentosMalos)
-  if(intentosMalos ===9){
-    letraIngresada.classList.add("invisible")
-    letrasExistentes = []
-    palabraEscrita = 0
-    acumulador= 60
-    letrasEquivocadas = []
+  if(intentosMalos === 9){
+    hacerInvisible(letraIngresada)
+    reiniciarVariablesGlobales()
     pincel.font = "25px Arial";
     pincel.fillStyle = "red";
     pincel.fillText("Fin del juego!", 100, 40);
   }
-
 }
 
 
@@ -77,10 +69,9 @@ function letraEquivocada(palabra,letra){
 let acumulador= 60
 let letrasEquivocadas = []
 function dibujarLetraEquivocada(palabra,letra,y){
-  // console.log(acumulador+"  oe")
   if( !palabra.includes(letra.toLowerCase()) &&  !letrasEquivocadas.includes(letra.toLowerCase()) && letra.length===1 && esLetra(letra)){
     letrasEquivocadas.push(letra.toLowerCase())
-    console.log(letrasEquivocadas)
+    // console.log(letrasEquivocadas)
     pincel.font = "25px Arial";
     pincel.fillStyle = "red";
     pincel.fillText(letra.toUpperCase(), acumulador, y);

@@ -6,13 +6,13 @@ const habilitar2Menu = () => {
 
   let botonComenzar = document.querySelector(".botones__comenzar")  //1
   let botonAgregar = document.querySelector(".botones__agregar")   //2
+  let letraIngresada = document.querySelector(".inputPalabraNueva")
+  
   botonComenzar.textContent = "Guardar y empezar"
   botonAgregar.textContent = "Cancelar"
-  let letraIngresada = document.querySelector(".inputPalabraNueva")
+
   letraIngresada.value = ""
-  letraIngresada.classList.remove("invisible")
-  letraIngresada.classList.add("visible")
-  console.log("agregar palabra.js")
+  hacerVisible(letraIngresada)
 
   botonAgregar.addEventListener("click", desistirAnonimo)
 }
