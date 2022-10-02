@@ -1,0 +1,96 @@
+:root{
+  --backgroundColor: #F3F5FC; 
+  --white: #ffffff;
+  --mensajeNormal: #0A3871;
+  --mensajeEncriptado: #495057;
+  --dark-blue: #0A3871; 
+  --dark--grey:#495057;
+}
+*{
+  margin: 0;
+}
+
+body{
+  background-color: var(--backgroundColor);
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header{
+  padding-left: 20px;
+  padding-top: 15px ;
+}
+
+.canvas{
+  width: 300px;
+  height: 300px;
+  display: none;
+}
+
+.tableroJuego{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputPalabra{
+  display: none;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.inputPalabraNueva{
+  margin-top: 80px;
+  border: 2px solid #0A3871;
+  border-radius: 20px ;
+  padding: 5px;
+}
+
+.botones{
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+  row-gap: 13px;
+  align-items: center;
+}
+
+.boton{
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.botones__comenzar{
+  width: 300px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.botones__agregar{
+  width: 270px;
+  background-color: inherit;
+  color: #0A3871;
+}
+
+.visible{
+  display: block;
+}
+
+.invisible{
+  display: none;
+}
+
+footer{
+  text-align: center;
+  margin-top: auto;
+}
+footer p{
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #0A3871;
+  color: white;
+  font-size: 17px;
+}
