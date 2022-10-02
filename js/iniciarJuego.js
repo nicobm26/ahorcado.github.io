@@ -18,6 +18,7 @@ function dibujarBase(){
 }
 
 function habilitarCanvas2(evento){ 
+  responsive()
   evento.stopPropagation();
   limpiarCanvas()
   reiniciarVariablesGlobales()
@@ -86,6 +87,8 @@ const desistirAnonimo = () =>{
   // console.log("Estoy en la desistirAnonimo")
   let botones = document.querySelector(".botones")
   botones.style.paddingTop = "150px"
+  botones.classList.add("botones")
+  botones.classList.remove("botonesTablet")
   // botonAgregar.removeEventListener("click", desistirAnonimo) Esto en teoria no estaba haciendo nada, ya que ese nombre "botonAgregar" no estaba haciendo definido
   btnAgregar.removeEventListener("click", desistirAnonimo)
 }

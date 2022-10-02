@@ -40,3 +40,13 @@ function reiniciarVariablesGlobales(){
   acumulador= 60
   letrasEquivocadas = []
 }
+
+function responsive(){
+  let botones = document.querySelector(".botones")
+  if (screen.width >= 768){
+    botones.classList.add("botonesTablet")
+  }else{
+    botones.classList.add("botones")
+  }
+  console.log("holaaaaa")
+}
