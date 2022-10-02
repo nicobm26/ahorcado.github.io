@@ -1,10 +1,14 @@
 let palabraEscrita = 0  //Para verificar si ya escribio toda la palabra secreta
 let letrasExistentes = []
+
 function ahorca(palabra, letra=""){
   let cantidadGuiones = palabra.length;
   let x = 30
   let y = 310
   let flag = false;
+  if(cantidadGuiones == 8){
+      x = 0
+  }
   for(let i = 0; i<cantidadGuiones; i++){
     pincel.beginPath()
     pincel.lineTo(x,y)

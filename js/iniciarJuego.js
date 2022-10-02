@@ -22,15 +22,17 @@ function habilitarCanvas2(evento){
   limpiarCanvas()
   reiniciarVariablesGlobales()
   let palabraIngresada = document.querySelector(".inputPalabraNueva")
+  let advertencia = document.querySelector(".bloque")
   if(palabraIngresada.value != ""){
     agregarPalabra(palabras, palabraIngresada.value);
     palabraIngresada.value = ""
   }
   // console.log("el conjutno es "+ palabras)
   hacerInvisible(palabraIngresada)
+  hacerInvisible(advertencia)
   let palabra = ""
   palabra = palabraRandom()
-  // console.log(palabra.toUpperCase() + " dentro de habilitarCanvas()")
+  console.log(palabra.toUpperCase() + " dentro de habilitarCanvas()")
 
   let canvas = document.querySelector("canvas")
   let letraIngresada = document.querySelector(".inputPalabra")
@@ -72,10 +74,12 @@ const desistirAnonimo = () =>{
   let btnComenzar = document.querySelector(".botones__comenzar")
   let btnAgregar = document.querySelector(".botones__agregar")
   let palabraIngresada = document.querySelector(".inputPalabraNueva")
+  let advertencia = document.querySelector(".bloque")
 
   hacerInvisible(canvas)
   hacerInvisible(letraIngresada)
   hacerInvisible(palabraIngresada)
+  hacerInvisible(advertencia)
 
   btnComenzar.textContent = "Iniciar juego"
   btnAgregar.textContent = "Agregar nueva palabra"
