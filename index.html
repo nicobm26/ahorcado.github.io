@@ -19,24 +19,37 @@
 
       <input type="text" class="inputPalabra" maxlength="1" minlength="1">
       <form action="">
-        <input type="text" class="inputPalabraNueva invisible" maxlength="8" minlength="1"> 
+        <input type="text" class="inputPalabraNueva invisible" placeholder="Ingrese una palabra" maxlength="8" minlength="1"> 
       </form>
     </div>
 
-    <div class="botones">
-      <button class="botones__comenzar boton">Iniciar juego</button>
-      <button class="botones__agregar boton">Agregar nueva palabra</button>
-      
-      <button class="botones__comenzar boton invisible">Nuevo juego</button>
-      <button class="botones__agregar boton invisible">Desistir</button>
+    <div id="advertencia" class="advertencia invisible">
+      <img src="https://i.postimg.cc/LsVf2TcH/warming.png" alt="Warming">
+      <p class="advertencia__texto">Máximo 8 letras</p>
+    </div>
 
-      <button class="botones__comenzar boton invisible">Guardar y empezar</button>
-      <button class="botones__agregar boton invisible">Cancelar</button>
+    <div class="botones">
+      <button id="btn__iniciar" class="botones__primario iniciar">Iniciar juego</button>
+      <button id="btn__agregar" class="botones__secundario">Agregar nueva palabra</button>
+    </div>
+
+    <div class="botones botonesMenuJuego">
+      <button id="btn__nuevoJuego" class="botones__primario newGame invisible">Nuevo juego</button>
+      <button id="btn__desistir" class="botones__secundario invisible">Desistir</button>
+    </div>
+
+    <div class="botones botonesMenuJuego">
+      <button id="btn__guardar" class="botones__primario invisible">Guardar y empezar</button>
+      <button id="btn__cancelar" class="botones__secundario invisible">Cancelar</button>
     </div>
   </main>
 
   <footer>
     <p>Desarrollado por: Ingeniero Nicolas Botello</p>
   </footer>
+  <script src="./js/dibujoAhorcado.js"></script>
+  <script src="./js/iniciarJuego.js"></script>
+  <script src="./js/agregarPalabra.js"></script>
+  <script src="./js/logicaJuego.js"></script>
 </body>
 </html>

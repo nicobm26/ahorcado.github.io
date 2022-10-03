@@ -45,38 +45,62 @@ body{
 
 .inputPalabraNueva{
   margin-top: 80px;
+  margin-bottom: 200px;
   border: 2px solid #0A3871;
   border-radius: 20px ;
-  padding: 5px;
+  padding: 6px;
+  font-size: 20px;
+}
+
+.advertencia{
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.advertencia__texto{
+  font-size: 16px;
 }
 
 .botones{
   display: flex;
   flex-direction: column;
-  padding-top: 150px;
   row-gap: 13px;
   align-items: center;
 }
 
-.boton{
-  border-radius: 24px;
-  padding: 24px;
-}
-
-.botones__comenzar{
+.botones__primario{
   width: 300px;
   background-color: var(--dark-blue);
   color: var(--white);
+  border-radius: 24px;
+  padding: 24px;
+  font-size: 16px;
 }
 
-.botones__agregar{
+.botones__secundario{
   width: 270px;
   background-color: inherit;
   color: #0A3871;
+  border-radius: 24px;
+  padding: 24px;
+  font-size: 16px;
+}
+
+.iniciar{
+  margin-top: 150px;
+}
+.newGame{
+  margin-top: 15px;
 }
 
 .visible{
-  display: block;
+  /* display: block; */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .invisible{
@@ -92,5 +116,20 @@ footer p{
   padding: 5px;
   background-color: #0A3871;
   color: white;
-  font-size: 17px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media screen and (min-width: 768px) {
+  .botonesMenuJuego{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .advertencia{
+    margin-right: 280px;
+  }
 }
