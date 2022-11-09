@@ -9,6 +9,7 @@ function ahorca(palabra, letra=""){
   let x = 30
   let y = 310
   let flag = false;
+  if ( letra === null) { letra = "" }
   for(let i = 0; i<cantidadGuiones; i++){
     pincel.beginPath()
     pincel.lineTo(x,y)

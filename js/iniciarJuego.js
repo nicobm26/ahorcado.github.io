@@ -126,13 +126,14 @@ function habilitarInterfazJuego(evento){
   dibujarGuiones(palabraAhorcado)
 
   function presionada(evento){
-    let letra = evento.key
+    //let letra = evento.key
+    let letra = evento.data;
     letraIngresada.value = "";
     letraIngresada.value = letra;
-    ahorca(palabraAhorcado, evento.key)
+    ahorca(palabraAhorcado, letra )
   }
-  letraIngresada.onkeydown = presionada;
-  
+  //letraIngresada.onkeydown = presionada;
+  letraIngresada.oninput = presionada;
   
   btNuevoJuego.addEventListener("click", nuevoJuego)
   btnDesistir.addEventListener("click",regresarMenu)
